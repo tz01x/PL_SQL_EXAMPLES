@@ -49,7 +49,7 @@ END;
 /
 -- trigger end 
 
--- try to insert it will give user defin exception 
--- and data wount be insarted 
+-- try to insert it will give user define exception 
+-- and data won't be insrt into db.
 
 insert into dummy values ('tumzed',2);
