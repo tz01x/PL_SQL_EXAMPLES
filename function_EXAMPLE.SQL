@@ -9,7 +9,7 @@
 -- <pl/sql block>
 
 -- FUNCTION ALLWAYS *MUST RETURN A VALUE* 
-
+-- FUNCTION CAN BE CALL IN SELECT STATEMENT OR IN PROCEDURE BLOCK
 
 
 
@@ -23,7 +23,8 @@ begin
     return 'Hey, You!.';
 end;
 /
-
+-- CALL THE FUNCTION IN SELECT STATEMENT 
+-- dual is dummy table
 select SAY_HAY as WORD from dual;
 
 
@@ -40,3 +41,5 @@ end;
 
 -- call the function 
 select FEED_NUMBER(0221523) as myID from dual;
+
+
