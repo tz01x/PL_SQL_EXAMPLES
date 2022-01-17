@@ -6,7 +6,8 @@
 create or replace type FULLNAME as OBJECT(
 firstName varchar(20),
 lastname varchar(20)
-);/
+)
+/
 
 drop table user_;
 create table user_ (
@@ -30,7 +31,7 @@ CREATE OR REPLACE TYPE BOOK AS OBJECT
 (
 book_title varchar(20), 
  author_name FULLNAME
-); 
+)
 / 
 
 -- creating collection of object in one object.
