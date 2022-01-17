@@ -36,7 +36,7 @@ book_title varchar(20),
 
 -- creating collection of object in one object.
 
-create or replace type colection_of_book is Table of BOOK;
+create or replace type colection_of_book as Table of BOOK;
 
 -- declearing colection_of_book object in fav_books 
 
@@ -54,7 +54,7 @@ nested table fav_books store as my_fav_books
 insert into favorite_book  values (
 
         new FULLNAME('first name','last name'), 
-        new books(
+        new colection_of_book(
             new book(
                     'title 1',
                     new FULLNAME('first name','last name')
@@ -68,5 +68,6 @@ insert into favorite_book  values (
 
 -- displaying nested table relation 
 
-select fav_b.personName.firstName, book.book_title
-form favorite_book fav_b,table(fav_b.fav_books) book;
+
+select fav_b.personName.firstName, cbooks.book_title from favorite_book fav_b,
+table(fav_b.fav_books) cbooks;
